@@ -56,3 +56,32 @@ if (age >=18 && password.length >= 8) {
 } else {
     console.log("Either age is not valid or password is not strong");
 }
+
+//OR operator ||
+//if either condition is true, the whole expression is true:
+if (age >= 18 || password.length >= 8) {
+    console.log("Either age is valid or password is strong");
+} else {
+    console.log("Both age is not valid and password is not strong");
+}
+
+
+//not operator !
+if (!age >= 18) {
+    console.log("you are not allowed to vote");
+} else {
+    console.log("you are allowed to vote");
+}
+
+
+//assignment operator with logical operators:
+let e = 5;
+let f = 10;
+
+console.log(e); // Output: 5
+
+// =, +=, -=, *=, /=, %=
+
+let sum = e + f; // sum is 15
+console.log(sum); // Output: 15     
+
