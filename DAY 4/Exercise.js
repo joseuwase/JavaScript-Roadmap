@@ -1,4 +1,4 @@
-/*let age = 30
+let age = 30
 
 if (age >= 18) {
     console.log("You are not  allowed to age");
@@ -43,17 +43,17 @@ if  (!UserAge >= 18) {
 if (userage !== 13){
     console.log(" you are not allowed")
 }  
-*/
+
 
 // E-commerce
 
-let cartTotal = 50;
+let carTotal = 100;
 let ispremiumMember = true;
 let hasDiscountCode = false;
 let isFraudulent = false;
 
-if (ispremiumMember || cartTotal >= 100) {
+if (ispremiumMember || cartotal>=100) {
     console.log("You are eligible for free shipping!");
 } else {
-    console.log("Your account is flagged as fraudulent.");
-} 
+    console.log("You are not eligible for free shipping.");
+}
