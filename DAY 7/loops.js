@@ -104,9 +104,9 @@ console.log("correct password, welcome to your account");
 //6. find the smallest number in the array and log it
 
 
-const numbers = [10,20,3,4,5,6,7,8,9,10,80,12,81,14,15,1,17,18,19,20,21,22,23,24,25];
+//*const numbers = [10,20,3,4,5,6,7,8,9,10,80,12,81,14,15,1,17,18,19,20,21,22,23,24,25];
 //1. log the even numbers 
-for (let i = 0; i < numbers.length; i++) {
+/*for (let i = 0; i < numbers.length; i++) {
     if (numbers[i] % 2 === 0) {
         console.log(numbers[i]);
     }
@@ -135,19 +135,48 @@ for(let x=0; x < numbers.length; x++){
     
 
 //5. find the largest number in the array and log it
-let largest =numbers[0];
-for (let i = 1; i < numbers.length; i++){
-    if (numbers[i]> largest){
+//let largest =numbers[0];
+//for (let i = 1; i < numbers.length; i++){
+    /*if (numbers[i]> largest){
         largest = numbers[i];
     }
 }
-console.log("the largest number is " + largest);
+//console.log("the largest number is " + largest);
 
 //6. find the smallest number in the array and log it
-let smallest = numbers[0];
- for (let i= 0; i <numbers.length; i++){
-    if (numbers[i] < smallest) {
-        smallest = numbers[i];
+//let smallest = numbers[0];
+ //for (let i= 0; i <numbers.length; i++){
+   // if (numbers[i] < smallest) {
+     //   smallest = numbers[i];
     }
 }
-console.log("the smallest number is " + smallest);  // these is the bubble sort algorithm 
+//console.log("the smallest number is " + smallest);  // these is the bubble sort algorithm 
+*/
+// the game correction
+// Generate random number between 1 and 10
+
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+console.log(randomNumber);
+
+const readline = require('node:readline/promises');
+const { stdin: input, stdout: output } = require('node:process');
+
+const rl = readline.createInterface({ input, output });
+
+async function startGuessing() {
+    let guess;
+
+    while (guess !== randomNumber) {
+        guess = Number(await rl.question('Guess a number between 1 and 10: '));
+
+        if (guess === randomNumber) {
+            console.log('Congratulations! You guessed the correct number.');
+        } else {
+            console.log('Wrong guess. Try again!');
+        }
+    }
+
+    rl.close();
+}
+
+startGuessing();
