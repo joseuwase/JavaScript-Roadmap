@@ -59,18 +59,15 @@ const number =[1,2,3,4,5,6,7,8,9,10];
 // in rest operators these are used to pass  and array as a perameter to a function
 
 function sum ( ...numbers){
-    return numbers.reduce((a, b) => a + b, 0);
+    let sumNumbers = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sumNumbers += numbers[i];
+    }
+    return sumNumbers;
 }
 
-console.log(sum(1,2,3,4,5,6,7,8,9,10));
+  console.log(sum(1,2,3,4,5,6,7,8,9,10));
 
-const sum2 = [1,2,3,4,5,6,7,8,9,10];
-
-//for (let i = 0; i < sum2.length; i++) {
-  //  const result = sum2[i] + sum2[i]+1;
-    //console.log(result);
-//}
- 
 
 // destructuring these is a method of extracting values from arrays or oblects and assigning then to avariables
 
@@ -92,15 +89,91 @@ const obj ={
     city: "kigali",
     state: "kigali",
     street: "kigali",
-    zip: "12345",
+    zip1: "12345",
     phone: "0798737043",
     email1: "uwasejose@gmail.com",
 }
 
 
- function createuser({name1, email1}){
+ function createuser({name1, email1 ,zip1}){
     console.log(name1);
     console.log(email1);
+    console.log(zip1);
  };
 
   createuser(obj);
+
+
+ let  x = 10;
+
+ function int() {
+    console.log(x);
+ }
+ int();
+
+ const user2 = {
+    name: "uwase",
+
+    getName() {
+        return this.name;
+    }
+ }
+
+
+ //closures
+ function outer() {
+    let counter = 0;
+    return function inner() {
+        counter++;
+        return counter;
+    }
+ }
+
+ const increment = outer();
+ console.log(increment());
+
+
+// type of  function with syntax
+//arrow function
+const get = (a,b) => {
+    return a + b;
+}
+
+
+//function declaration
+function get() {
+    console.log("this is a function declarayion");
+}
+
+//function expression
+const get = function(){
+    return "hello world";
+}
+
+//anonymous function
+
+const anonymous = function (){
+
+}
+
+
+//Asynchronous function
+const get = async () => {
+    return"hello world";
+}
+
+
+
+
+
+
+
+
+
+
+
+ // function expression
+
+ const ge
+
+  
