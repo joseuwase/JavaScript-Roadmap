@@ -172,8 +172,6 @@ const get = async () => {
 
 
 
- // function expression
-
- const ge
+ 
 
   
