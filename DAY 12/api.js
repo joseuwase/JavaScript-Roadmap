@@ -1,45 +1,54 @@
-//.then.catch.finaally
+// url = https://dummyjson.com/products for the backend
 
-// url: https://dummyjson.com/products for the backend
+// .then .catch .finally
 
-async function fetchData() {
-    const response = await fetch('https://dummyjson.com/products');// for the backend
+fetch("https://dummyjson.com/products")
 
+.then(
+    response => {
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
 
-    //promise checking
+        return response.json();
+    },
+)
 
-    if(!response.ok){
-        throw new error("failed to fetch data");
+.then(
+    data => {
+        console.log(data);
     }
+)
 
-    const data = await response.json();
-    console.log(data);
-}
+.catch(
+    error => {
+        console.log(error);
+    }
+)
+.finally(
+    () => {
+        console.log("Done");
+    }
+)
 
-fetchData()
+
 
 // try and catch
 
+async function fetchData() {
 
+   try {
+       const response = await fetch("https://dummyjson.com/products");
+       if (!response.ok) {
+           throw new Error(`HTTP ${response.status}`);
+       }
+       const data = await response.json();
+       console.log(data);
 
-
-try{
-    const response = await fetch('https://dummyjson.com/products');
-    if(!response.ok){
-        throw new error("http error: " + response.status: ${response.statusText});   
-    }
-    const data = await response.json();
-    console.log(data);
-    catch(error){
-        console.error("error fetching data: ", error);
+   } catch (error) {
+      console.log(error);
+   }
+   
 }
 
-console.log(response); 
-
-
-
-
-
-
-
-
+fetchData();
